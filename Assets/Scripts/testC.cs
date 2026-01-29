@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class testC : MonoBehaviour
 {
-    public void Generate()
+    public void OnParticle()
     {
         GetComponent<ParticleSystem>().Play();
     }

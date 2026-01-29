@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testC : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public void OnParticle()
-    {
-        GetComponent<ParticleSystem>().Play();
-    }
     // Start is called before the first frame update
     void Start()
     {

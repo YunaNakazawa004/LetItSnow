@@ -16,11 +16,16 @@ public class testG : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject igaguri = Instantiate(ParticlePrehab);
+            // マウスの位置を取得
+            Vector3 mousePos = Input.mousePosition;
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Vector3 worldDir = ray.direction;
-            igaguri.GetComponent<testC>().Generate();
+            mousePos.z = 10f;
+
+            Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+            Instantiate(ParticlePrehab, spawnPos, Quaternion.identity);
+
+            ParticlePrehab.GetComponent<testC>().OnParticle();
         }
     }
 }

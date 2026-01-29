@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class SnowBallManager : MonoBehaviour
 {
+    public void Shoot(Vector3 dir)
+    {
+        GetComponent<Rigidbody>().AddForce(dir);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<ParticleSystem>().Play();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class testC : MonoBehaviour
 {
+    public void Generate()
+    {
+        GetComponent<ParticleSystem>().Play();
+    }
     // Start is called before the first frame update
     void Start()
     {

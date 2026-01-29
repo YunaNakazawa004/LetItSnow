@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SnowBallGenerator : MonoBehaviour
 {
+    public GameObject snowballPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,7 @@ public class SnowBallGenerator : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject snowball = Instantiate(snowballPrafab);
+            GameObject snowball = Instantiate(snowballPrefab);
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 worldDir = ray.direction;

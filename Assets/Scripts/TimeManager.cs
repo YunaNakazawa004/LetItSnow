@@ -8,19 +8,19 @@ public class TimeManager : MonoBehaviour
 {
     public Text timeText;    //時間表示用テキスト
     public float limit = 180.0f;    //制限時間
-    public GameObject text;    //ゲームオーバー表示用テキスト
+    public GameObject text;    //ゲームセット表示用テキスト
     public GameObject player;    //プレイヤー格納用
-    private bool isGameOver = false;    //ゲームオーバー判定
+    private bool isGameSet = false;    //ゲームセット判定
 
     void Start()
     {
-        timeText.text = "Time:" + limit + "秒";
+        timeText.text = "TIME:" + limit + " s";
     }
 
     void Update()
     {
         //ゲームオーバー状態で画面がクリックされたとき
-        if (isGameOver && Input.GetMouseButton(0))
+        if (isGameSet && Input.GetMouseButton(0))
         {
             Restart();
         }
@@ -28,16 +28,16 @@ public class TimeManager : MonoBehaviour
         //時間制限がきたとき
         if (limit < 0)
         {
-            //ゲームオーバーを表示する
+            //ゲームセットを表示する
             text.GetComponent<Text>().text = "GameSet!";
             text.SetActive(true);
-            isGameOver = true;            //ゲームオーバー
+            isGameSet = true;            //ゲームオーバー
             return;
         }
 
         //時間をカウントダウンする
         limit -= Time.deltaTime;
-        timeText.text = "Time:" + limit.ToString("f1") + "秒";
+        timeText.text = "TIME:" + limit.ToString("f2") + " s";
     }
 
     //シーンを再読み込みする

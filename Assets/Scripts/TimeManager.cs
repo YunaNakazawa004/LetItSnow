@@ -29,7 +29,7 @@ public class TimeManager : MonoBehaviour
         if (limit < 0)
         {
             //ゲームオーバーを表示する
-            text.GetComponent<Text>().text = "GameOver...";
+            text.GetComponent<Text>().text = "GameSet!";
             text.SetActive(true);
             isGameOver = true;            //ゲームオーバー
             return;

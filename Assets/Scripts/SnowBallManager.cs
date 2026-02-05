@@ -27,4 +27,14 @@ public class SnowBallManager : MonoBehaviour
     {
         
     }
+
+    // 雪玉がプレイヤーか敵に当たったら消す
+    private void OnTriggerEnter(Collider other)
+    {
+        // ぶつかったオブジェクトのタグがプレイヤーか敵なら
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

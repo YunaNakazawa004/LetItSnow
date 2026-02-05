@@ -5,6 +5,7 @@ using UnityEngine;
 public class testG : MonoBehaviour
 {
     public GameObject ParticlePrehab;
+    public GameObject ParticlePrehab2;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,9 @@ public class testG : MonoBehaviour
             Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos);
 
             Instantiate(ParticlePrehab, spawnPos, Quaternion.identity);
+            Instantiate(ParticlePrehab2, spawnPos, Quaternion.identity);
 
-            ParticlePrehab.GetComponent<testC>().OnParticle();
+            // ParticlePrehab.GetComponent<testC>().OnParticle();
         }
     }
 }

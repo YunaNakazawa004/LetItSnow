@@ -29,6 +29,10 @@ public class AudioManager : MonoBehaviour
         {
             ThrowSE();
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            HitSE();
+        }
     }
 
     public void PlaySE(AudioClip clip)
@@ -51,5 +55,10 @@ public class AudioManager : MonoBehaviour
     public void ThrowSE()
     {
         PlaySE(SE1);
+    }
+
+    public void HitSE()
+    {
+        PlaySE(SE2);
     }
 }

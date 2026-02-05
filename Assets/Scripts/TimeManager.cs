@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
-        timeText.text = "TIME:" + limit + "秒";
+        timeText.text = "TIME:" + limit + " s";
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
 
         //時間をカウントダウンする
         limit -= Time.deltaTime;
-        timeText.text = "TIME:" + limit.ToString("f2") + "秒";
+        timeText.text = "TIME:" + limit.ToString("f2") + " s";
     }
 
     //シーンを再読み込みする

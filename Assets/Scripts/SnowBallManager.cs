@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnowBallManager : MonoBehaviour
 {
     bool bEnemy;
-    GameObject PlayerManager;
+    //GameObject PlayerManager;
 
     public void Shoot(Vector3 dir, bool b)
     {
@@ -19,8 +19,8 @@ public class SnowBallManager : MonoBehaviour
         {// ƒvƒŒƒCƒ„[‚Ì’e‚ª“G‚É“–‚½‚Á‚½
             Destroy(gameObject);
 
-            this.PlayerManager = GameObject.Find("PlayerManager");
-            PlayerManager.GetComponent<PlayerManager>().AddScore(1);
+            //this.PlayerManager = GameObject.Find("PlayerManager");
+            //PlayerManager.GetComponent<PlayerManager>().AddScore(1);
 
             //GetComponent<ParticleSystem>().Play();
         }

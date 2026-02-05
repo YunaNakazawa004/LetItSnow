@@ -266,6 +266,7 @@ MonoBehaviour:
   SE0: {fileID: 8300000, guid: e8c411860b09a204ea4a70e05cdc6dfa, type: 3}
   SE1: {fileID: 8300000, guid: b18a4c12656ecac4981b47a2778d0de0, type: 3}
   SE2: {fileID: 8300000, guid: 8aa07a2cc44c02d4e96c830b4f4e9bf9, type: 3}
+  SE3: {fileID: 8300000, guid: f89ad1122ad49b3439ef36a5dd6bcf6e, type: 3}
 --- !u!1 &969677765
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,23 +21,13 @@ public class EffectManager : MonoBehaviour
 
         foreach (var ball in balls)
         {
+            if (EffectPrefab != null)
+            {
                 // エフェクト付与
                 GameObject effect = Instantiate(EffectPrefab, ball.transform);
-            effect.transform.localPosition = Vector3.zero;
-            
-        }
-    }
-    // EffectManager のコライダーを Trigger にしておく
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ball"))
-        {
-            if (trails.TryGetValue(other.gameObject, out GameObject effect))
-            {
-                Destroy(effect); // 尾を消す
-                trails.Remove(other.gameObject);
+                effect.transform.localPosition = Vector3.zero;
             }
+
         }
     }
-
 }

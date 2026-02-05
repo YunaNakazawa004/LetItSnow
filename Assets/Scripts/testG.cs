@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class testG : MonoBehaviour
 {
-    public GameObject ParticlePrehab;
-    public GameObject ParticlePrehab2;
+    public GameObject ParticlePrehab = null;
+    public GameObject ParticlePrehab2 = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class testG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+       //if (Input.GetMouseButtonDown(0))
         {
             // マウスの位置を取得
             Vector3 mousePos = Input.mousePosition;
@@ -24,8 +24,14 @@ public class testG : MonoBehaviour
 
             Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos);
 
-            Instantiate(ParticlePrehab, spawnPos, Quaternion.identity);
-            Instantiate(ParticlePrehab2, spawnPos, Quaternion.identity);
+            if (ParticlePrehab != null)
+            {
+                Instantiate(ParticlePrehab, spawnPos, Quaternion.identity);
+            }
+            if (ParticlePrehab2 != null)
+            {
+                Instantiate(ParticlePrehab2, spawnPos, Quaternion.identity);
+            }
 
             // ParticlePrehab.GetComponent<testC>().OnParticle();
         }

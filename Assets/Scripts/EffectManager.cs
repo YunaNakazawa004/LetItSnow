@@ -17,17 +17,17 @@ public class EffectManager : MonoBehaviour
     void Update()
     {
         // シーン上の全ての玉を検索
-        //var balls = GameObject.FindGameObjectsWithTag("Ball");
+        var balls = GameObject.FindGameObjectsWithTag("Ball");
 
-        //foreach (var ball in balls)
-        //{
-        //    if (EffectPrefab != null)
-        //    {
-        //        // エフェクト付与
-        //        GameObject effect = Instantiate(EffectPrefab, ball.transform);
-        //        effect.transform.localPosition = Vector3.zero;
-        //    }
+        foreach (var ball in balls)
+        {
+            if (EffectPrefab != null)
+            {
+                // エフェクト付与
+                GameObject effect = Instantiate(EffectPrefab, ball.transform);
+                effect.transform.localPosition = Vector3.zero;
+            }
 
-        //}
+        }
     }
 }

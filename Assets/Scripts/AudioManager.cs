@@ -8,7 +8,9 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     private AudioSource audioSource = null;
-    public AudioClip SE;
+    public AudioClip SE0;
+    public AudioClip SE1;
+    public AudioClip SE2;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,13 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.D))
         {
-            GameOver();
+            Walk();
+        }
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            Throw();
         }
     }
 
@@ -37,8 +43,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public void Walk()
     {
-        PlaySE(SE);
+        PlaySE(SE0);
+    }
+
+    public void Throw()
+    {
+        PlaySE(SE1);
     }
 }

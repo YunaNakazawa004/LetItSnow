@@ -5,6 +5,7 @@ using UnityEngine;
 public class SnowBallManager : MonoBehaviour
 {
     bool bEnemy;
+    GameObject PlayerManager;
 
     public void Shoot(Vector3 dir, bool b)
     {
@@ -12,21 +13,23 @@ public class SnowBallManager : MonoBehaviour
         bEnemy = b;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        GetComponent<Rigidbody>().isKinematic = true;
-
-        //GetComponent<ParticleSystem>().Play();
-
-        // ぶつかったオブジェクトのタグがプレイヤーか敵なら
         if(other.gameObject.CompareTag("Enemy") && bEnemy == false)
         {// プレイヤーの弾が敵に当たった
             Destroy(gameObject);
+
+            this.PlayerManager = GameObject.Find("PlayerManager");
+            PlayerManager.GetComponent<PlayerManager>().AddScore(1);
+
+            //GetComponent<ParticleSystem>().Play();
         }
 
         if (other.gameObject.CompareTag("Player") && bEnemy == true)
         {// 敵の弾がプレイヤーに当たった
             Destroy(gameObject);
+
+            //GetComponent<ParticleSystem>().Play();
         }
     }
 

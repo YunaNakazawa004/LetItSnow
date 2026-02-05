@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class SnowBallManager : MonoBehaviour
 {
-    public void Shoot(Vector3 dir)
+    bool bEnemy;
+    //GameObject PlayerManager;
+
+    public void Shoot(Vector3 dir, bool b)
     {
         GetComponent<Rigidbody>().AddForce(dir);
+        bEnemy = b;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        GetComponent<Rigidbody>().isKinematic = true;
+        if(other.gameObject.CompareTag("Enemy") && bEnemy == false)
+        {// プレイヤーの弾が敵に当たった
+            Destroy(gameObject);
 
-        //GetComponent<ParticleSystem>().Play();
+            //this.PlayerManager = GameObject.Find("PlayerManager");
+            //PlayerManager.GetComponent<PlayerManager>().AddScore(1);
+
+            //GetComponent<ParticleSystem>().Play();
+        }
+
+        if (other.gameObject.CompareTag("Player") && bEnemy == true)
+        {// 敵の弾がプレイヤーに当たった
+            Destroy(gameObject);
+
+            //GetComponent<ParticleSystem>().Play();
+        }
     }
 
     // Start is called before the first frame update
@@ -26,15 +43,5 @@ public class SnowBallManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    // 雪玉がプレイヤーか敵に当たったら消す
-    private void OnTriggerEnter(Collider other)
-    {
-        // ぶつかったオブジェクトのタグがプレイヤーか敵なら
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
     }
 }

@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip SE0;
     public AudioClip SE1;
     public AudioClip SE2;
+    public AudioClip SE3;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,13 @@ public class AudioManager : MonoBehaviour
         {
             ThrowSE();
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             HitSE();
+        }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            JumpSE();
         }
     }
 
@@ -60,5 +65,10 @@ public class AudioManager : MonoBehaviour
     public void HitSE()
     {
         PlaySE(SE2);
+    }
+
+    public void JumpSE()
+    {
+        PlaySE(SE3);
     }
 }

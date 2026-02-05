@@ -34,7 +34,7 @@ public class SnowBallGenerator : MonoBehaviour
                 Ray ray = Camera.main.ViewportPointToRay(player.transform.position);
                 //Vector3 worldDir = -ray.direction;
                 Vector3 worldDir = player.transform.position - enemy.transform.position;
-                snowball.GetComponent<SnowBallManager>().Shoot(worldDir.normalized * 2000);
+                snowball.GetComponent<SnowBallManager>().Shoot(worldDir.normalized * 2000, bEnemy);
             }
         }
         else
@@ -48,7 +48,7 @@ public class SnowBallGenerator : MonoBehaviour
 
                 Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
                 Vector3 worldDir = ray.direction;
-                snowball.GetComponent<SnowBallManager>().Shoot(worldDir.normalized * 2000);
+                snowball.GetComponent<SnowBallManager>().Shoot(worldDir.normalized * 2000, bEnemy);
             }
         }
     }

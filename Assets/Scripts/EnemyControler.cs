@@ -25,7 +25,7 @@ public class EnemyControler : MonoBehaviour
     //=====================================================
     void Update()
     {
-        float fRand;
+        //float fRand;
 
         // ˆÚ“®(”½•œ)ˆ—
         MoveEnemy();

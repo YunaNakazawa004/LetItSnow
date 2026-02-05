@@ -23,11 +23,11 @@ public class AudioManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.D))
         {
-            Walk();
+            WalkSE();
         }
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            Throw();
+            ThrowSE();
         }
     }
 
@@ -43,12 +43,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Walk()
+    public void WalkSE()
     {
         PlaySE(SE0);
     }
 
-    public void Throw()
+    public void ThrowSE()
     {
         PlaySE(SE1);
     }

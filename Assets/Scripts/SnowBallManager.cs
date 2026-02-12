@@ -28,9 +28,8 @@ public class SnowBallManager : MonoBehaviour
             //PlayerManager.GetComponent<PlayerManager>().AddScore(1);
 
             //GetComponent<ParticleSystem>().Play();
-            Debug.Log("hit");
             EM.OnBallHit(gameObject);
-            Score.UpScore("Enemy", 1);
+            Score.UpScore(other.gameObject.tag, 1);
         }
         else if (other.gameObject.CompareTag("Player") && bEnemy == true)
         {// ìGÇÃíeÇ™ÉvÉåÉCÉÑÅ[Ç…ìñÇΩÇ¡ÇΩ
@@ -42,7 +41,7 @@ public class SnowBallManager : MonoBehaviour
         else if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Score.UpScore("Player", 1);
+            Score.UpScore(other.gameObject.tag, 1);
         }
     }
 

@@ -23,7 +23,6 @@ public class EffectManager : MonoBehaviour
 
         foreach (var ball in balls)
         {
-            Debug.Log("effected!");
             if (EffectPrefab != null)
             {
                 // エフェクト付与

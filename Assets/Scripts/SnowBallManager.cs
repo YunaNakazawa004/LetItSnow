@@ -11,6 +11,8 @@ public class SnowBallManager : MonoBehaviour
     {
         GetComponent<Rigidbody>().AddForce(dir);
         bEnemy = b;
+
+        GetComponent<ParticleSystem>().Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,14 +24,14 @@ public class SnowBallManager : MonoBehaviour
             //this.PlayerManager = GameObject.Find("PlayerManager");
             //PlayerManager.GetComponent<PlayerManager>().AddScore(1);
 
-            //GetComponent<ParticleSystem>().Play();
+            GetComponent<ParticleSystem>().Play();
         }
 
         if (other.gameObject.CompareTag("Player") && bEnemy == true)
         {// “G‚Ì’e‚ªƒvƒŒƒCƒ„[‚É“–‚½‚Á‚½
             Destroy(gameObject);
 
-            //GetComponent<ParticleSystem>().Play();
+            GetComponent<ParticleSystem>().Play();
         }
     }
 

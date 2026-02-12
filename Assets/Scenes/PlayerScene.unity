@@ -122,6 +122,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &24926403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24926404}
+  m_Layer: 0
+  m_Name: CameraTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &24926404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24926403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.84, y: 3.16, z: -1.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 992283647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &62569910
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 30
   mouseSpeed: 10
-  cameraDist: 4
-  target: {fileID: 1009280452}
+  cameraDist: 6
+  target: {fileID: 24926404}
   pivot: {fileID: 0}
   camTrans: {fileID: 0}
   minAngle: -25
@@ -494,11 +525,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5483153960478867473, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
   m_PrefabInstance: {fileID: 1461306991}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1009280452 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8074478032568471678, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
-  m_PrefabInstance: {fileID: 1461306991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1346460417
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +679,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5483153960478867473, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1472803053}
+    - targetCorrespondingSourceObject: {fileID: 5483153960478867473, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 24926404}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5139666920524405419, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
       insertIndex: -1

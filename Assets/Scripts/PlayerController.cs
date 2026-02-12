@@ -85,18 +85,24 @@ public class PlayerController : MonoBehaviour
 				if (!slide)
 				{
 					if (Mathf.Abs(rb.velocity.magnitude) < speed * 1.0f)
+					{
 						rb.AddForce(velocityChange, ForceMode.VelocityChange);
+						GetComponent<AudioManager>().WalkSE();
+					}
 				}
 				else if (Mathf.Abs(rb.velocity.magnitude) < speed * 1.0f)
 				{
 					rb.AddForce(moveDir * 0.15f, ForceMode.VelocityChange);
 					//Debug.Log(rb.velocity.magnitude);
+					GetComponent<AudioManager>().WalkSE();
 				}
 
 				// Jump
 				if (IsGrounded() && Input.GetButton("Jump"))
 				{
 					rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+
+					GetComponent<AudioManager>().JumpSE();
 				}
 			}
 			else

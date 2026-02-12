@@ -49,6 +49,8 @@ public class SnowBallGenerator : MonoBehaviour
                 Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
                 Vector3 worldDir = ray.direction;
                 snowball.GetComponent<SnowBallManager>().Shoot(worldDir.normalized * 2000, bEnemy);
+
+                GetComponent<AudioManager>().ThrowSE();
             }
         }
     }

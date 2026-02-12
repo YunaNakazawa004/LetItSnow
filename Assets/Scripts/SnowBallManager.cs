@@ -29,7 +29,7 @@ public class SnowBallManager : MonoBehaviour
 
             //GetComponent<ParticleSystem>().Play();
             EM.OnBallHit(gameObject);
-            Score.UpScore(other.gameObject.tag, 1);
+            Score.UpScore("Enemy", 1);
         }
         else if (other.gameObject.CompareTag("Player") && bEnemy == true)
         {// ìGÇÃíeÇ™ÉvÉåÉCÉÑÅ[Ç…ìñÇΩÇ¡ÇΩ
@@ -41,7 +41,7 @@ public class SnowBallManager : MonoBehaviour
         else if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Score.UpScore(other.gameObject.tag, 1);
+            Score.UpScore("Player", 1);
         }
     }
 

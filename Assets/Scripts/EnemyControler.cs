@@ -11,6 +11,7 @@ public class EnemyControler : MonoBehaviour
 
     private Vector3 startPos;            // 開始位置
     private float fAngle = 0.0f;         // 角度
+    private Rigidbody rb;
 
     //=====================================================
     // 開始処理
@@ -18,6 +19,10 @@ public class EnemyControler : MonoBehaviour
     void Start()
     {
         startPos = transform.position;  // オブジェクトの初期位置を設定
+
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+        rb.useGravity = false;
     }
 
     //=====================================================
@@ -30,12 +35,16 @@ public class EnemyControler : MonoBehaviour
         // 移動(反復)処理
         MoveEnemy();
 
+#if false
         if (Input.GetMouseButtonDown(0))
         {// マウスが押された
 
             // 投げる処理
             ThrowEnemy();
         }
+#endif
+
+        rb.AddForce(new Vector3(0, -10 * GetComponent<Rigidbody>().mass, 0));
     }
 
     //========================================

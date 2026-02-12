@@ -8,8 +8,8 @@ public class ScoreManager : MonoBehaviour
     public Text playerScoreText;    // プレイヤーのスコアテキスト
     public Text enemyScoreText;     // 敵のスコアテキスト
 
-    private int nScorePlayer;       // プレイヤーのスコア
-    private int nScoreEnemy;        // 敵のスコア
+    public int nScorePlayer;       // プレイヤーのスコア
+    public int nScoreEnemy;        // 敵のスコア
 
     //=====================================================
     // 開始処理
@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
         playerScoreText.text = "PLAYER\n" + nScorePlayer.ToString();    // 整数を文字列に変換
         enemyScoreText.text = "ENEMY\n" + nScoreEnemy.ToString();       // 整数を文字列に変換
 
-#if false
+#if true
         // 入力テスト
         if(Input.GetMouseButtonDown(1))
         {// 左が押された

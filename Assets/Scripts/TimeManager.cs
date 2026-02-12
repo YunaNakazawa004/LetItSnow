@@ -12,7 +12,7 @@ public class TimeManager : MonoBehaviour
     public float limit = 180.0f;    //制限時間
     public GameObject text;    //ゲームセット表示用テキスト
     public GameObject WinUI;    // プレイヤー勝利時のUI
-    public GameObject DrowUI;    // プレイヤー勝利時のUI
+    public GameObject DrawUI;    // プレイヤー勝利時のUI
     public GameObject LoseUI;    // プレイヤー勝利時のUI
     private bool isGameSet = false;    //ゲームセット判定
 
@@ -21,7 +21,7 @@ public class TimeManager : MonoBehaviour
         timeText.text = "TIME\n" + limit + " s";
 
         WinUI.SetActive(false);
-        DrowUI.SetActive(false);
+        DrawUI.SetActive(false);
         LoseUI.SetActive(false);
     }
 
@@ -47,7 +47,7 @@ public class TimeManager : MonoBehaviour
             else if (GetScoreScript.nScorePlayer == GetScoreScript.nScoreEnemy)
             {
                 //ゲームセットを表示する
-                DrowUI.SetActive(true);
+                DrawUI.SetActive(true);
 
                 //text.GetComponent<Text>().text = "GameSet!\n" + "DROW\n" + "\nPrease Buttton";
             }

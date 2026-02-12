@@ -50,7 +50,7 @@ public class EffectManager : MonoBehaviour
 
             if (EffectPrefab3 != null)
             {
-                Instantiate(EffectPrefab2, spawnPos, Quaternion.identity);
+                Instantiate(EffectPrefab3, spawnPos, Quaternion.identity);
             }
         }
     }

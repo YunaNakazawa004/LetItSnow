@@ -1709,7 +1709,7 @@ PrefabInstance:
     - target: {fileID: 7674307319944364871, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1086825522}
+      objectReference: {fileID: 408051948}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2491,7 +2491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 30
-  mouseSpeed: 10
+  mouseSpeed: 15
   cameraDist: 6
   target: {fileID: 2031978705}
   pivot: {fileID: 0}

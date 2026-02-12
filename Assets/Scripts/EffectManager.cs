@@ -17,7 +17,7 @@ public class EffectManager : MonoBehaviour
     void Update()
     {
         // ƒV[ƒ“ã‚Ì‘S‚Ä‚Ì‹Ê‚ğŒŸõ
-        var balls = GameObject.FindGameObjectsWithTag("Ball");
+       var balls = GameObject.FindGameObjectsWithTag("Ball");
 
         foreach (var ball in balls)
         {
@@ -30,4 +30,16 @@ public class EffectManager : MonoBehaviour
 
         }
     }
+    public void RegisterBall(GameObject snowball)
+    {
+
+    }
+    private void OnBallHit(GameObject ball)
+    {
+        if (trails.TryGetValue(ball, out GameObject effect))
+        {
+            Destroy(effect);
+        }
+    }
+
 }

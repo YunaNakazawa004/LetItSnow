@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
+    public ScoreManager GetScoreScript;
+
     public Text timeText;    //時間表示用テキスト
     public float limit = 180.0f;    //制限時間
     public GameObject text;    //ゲームセット表示用テキスト
-    public GameObject player;    //プレイヤー格納用
     private bool isGameSet = false;    //ゲームセット判定
 
     void Start()
     {
-        timeText.text = "TIME:" + limit + " s";
+        timeText.text = "TIME\n" + limit + " s";
     }
 
     void Update()
@@ -28,8 +29,23 @@ public class TimeManager : MonoBehaviour
         //時間制限がきたとき
         if (limit < 0)
         {
-            //ゲームセットを表示する
-            text.GetComponent<Text>().text = "GameSet!";
+            if (GetScoreScript.nScorePlayer > GetScoreScript.nScoreEnemy)
+            {// プレイヤーのスコアが高い場合
+
+                //ゲームセットを表示する
+                text.GetComponent<Text>().text = "GameSet!\n" + "YOU WIN!!\n" + "\nPrease Buttton";
+            }
+            else if(GetScoreScript.nScorePlayer == GetScoreScript.nScoreEnemy)
+            {
+                //ゲームセットを表示する
+                text.GetComponent<Text>().text = "GameSet!\n" + "DROW\n" + "\nPrease Buttton";
+            }
+            else
+            {
+                //ゲームセットを表示する
+                text.GetComponent<Text>().text = "GameSet!\n" + "YOU LOSE...\n" + "\nPrease Buttton";
+            }
+
             text.SetActive(true);
             isGameSet = true;            //ゲームオーバー
             return;
@@ -37,7 +53,7 @@ public class TimeManager : MonoBehaviour
 
         //時間をカウントダウンする
         limit -= Time.deltaTime;
-        timeText.text = "TIME:" + limit.ToString("f2") + " s";
+        timeText.text = "TIME\n" + limit.ToString("f2") + " s";
     }
 
     //シーンを再読み込みする

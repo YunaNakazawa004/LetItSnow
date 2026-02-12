@@ -2619,7 +2619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 30
   mouseSpeed: 15
-  cameraDist: 6
+  cameraDist: 8
   target: {fileID: 2031978705}
   pivot: {fileID: 0}
   camTrans: {fileID: 0}

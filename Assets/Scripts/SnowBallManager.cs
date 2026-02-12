@@ -41,6 +41,7 @@ public class SnowBallManager : MonoBehaviour
         else if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+            Score.UpScore("Player", 1);
         }
     }
 

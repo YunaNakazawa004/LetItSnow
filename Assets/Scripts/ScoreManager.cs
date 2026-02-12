@@ -5,19 +5,27 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance;
+
     public Text playerScoreText;    // プレイヤーのスコアテキスト
     public Text enemyScoreText;     // 敵のスコアテキスト
 
-    public int nScorePlayer;       // プレイヤーのスコア
-    public int nScoreEnemy;        // 敵のスコア
+    public int nScorePlayer = 0;       // プレイヤーのスコア
+    public int nScoreEnemy = 0;        // 敵のスコア
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
 
     //=====================================================
     // 開始処理
     //=====================================================
     void Start()
     {
-        nScorePlayer = 0;   // プレイヤーのスコアを初期化
-        nScoreEnemy = 0;    // 敵のスコアを初期化
+        //nScorePlayer = 0;   // プレイヤーのスコアを初期化
+        //nScoreEnemy = 0;    // 敵のスコアを初期化
     }
 
     //=====================================================
@@ -51,12 +59,12 @@ public class ScoreManager : MonoBehaviour
     //========================================
     public void UpScore(string tag, int nUpScore)
     {
-        if(Equals(tag, "player"))
+        if(Equals(tag, "Player"))
         {// 当たったのがプレイヤー
 
             nScoreEnemy += nUpScore;      // 敵のスコアを加算
         }
-        else if(Equals(tag, "enemy"))
+        else if(Equals(tag, "Enemy"))
         {// 当たったのが敵
 
             nScorePlayer += nUpScore;      // プレイヤーのスコアを加算

@@ -6,10 +6,10 @@ public class SnowBallManager : MonoBehaviour
 {
     bool bEnemy;
     public int nCoolTime = 240;  // 自動発射の場合、何フレームに一回発射するか
-    public ScoreManager Score;
+    //public ScoreManager Score;
     private int nCountCT = 0;    // 発射のカウンター
     public EffectManager EM;
-    //GameObject PlayerManager;
+    //GameObject PlayerManager; 
 
     public void Shoot(Vector3 dir, bool b)
     {
@@ -29,19 +29,21 @@ public class SnowBallManager : MonoBehaviour
 
             //GetComponent<ParticleSystem>().Play();
             EM.OnBallHit(gameObject);
-            Score.UpScore("Enemy", 1);
+            ScoreManager.Instance.UpScore("Enemy", 1);
+            //Score.UpScore("Enemy", 1);
         }
         else if (other.gameObject.CompareTag("Player") && bEnemy == true)
         {// 敵の弾がプレイヤーに当たった
             EM.OnBallHit(gameObject);
             Destroy(gameObject);
+            ScoreManager.Instance.UpScore("Player", 1);
 
             //GetComponent<ParticleSystem>().Play();
         }
         else if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Score.UpScore("Player", 1);
+            //Score.UpScore("Player", 1);
         }
     }
 

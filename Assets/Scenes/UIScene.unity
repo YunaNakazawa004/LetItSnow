@@ -347,10 +347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c31abf3e9c8d141a9e7ef52c470a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GetScoreScript: {fileID: 0}
   timeText: {fileID: 1429040232}
   limit: 180
   text: {fileID: 1429040231}
-  player: {fileID: 0}
+  WinUI: {fileID: 0}
+  DrawUI: {fileID: 0}
+  LoseUI: {fileID: 0}
 --- !u!4 &755261296
 Transform:
   m_ObjectHideFlags: 0

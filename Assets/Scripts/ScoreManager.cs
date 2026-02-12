@@ -26,24 +26,40 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         // 表示テキストの設定
-        playerScoreText.text = "PLAYER\n" + nScorePlayer;
-        enemyScoreText.text = "ENEMY\n" + nScoreEnemy;
+        playerScoreText.text = "PLAYER\n" + nScorePlayer.ToString();    // 整数を文字列に変換
+        enemyScoreText.text = "ENEMY\n" + nScoreEnemy.ToString();       // 整数を文字列に変換
+
+#if false
+        // 入力テスト
+        if(Input.GetMouseButtonDown(1))
+        {// 左が押された
+
+            // プレイヤーのスコアの加算
+            UpScore("player",1);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {// 右が押された
+            
+            // 敵のスコアの加算
+            UpScore("enemy",1);
+        }
+#endif
     }
 
     //========================================
     // スコアの更新処理処理
     //========================================
-    void UpScore(string tag)
+    void UpScore(string tag, int nUpScore)
     {
         if(Equals(tag, "player"))
         {// 当たったのがプレイヤー
 
-            nScoreEnemy++;      // 敵のスコアを加算
+            nScoreEnemy += nUpScore;      // 敵のスコアを加算
         }
         else if(Equals(tag, "enemy"))
         {// 当たったのが敵
 
-            nScorePlayer++;      // プレイヤーのスコアを加算
+            nScorePlayer += nUpScore;      // プレイヤーのスコアを加算
         }
     }
 

@@ -53,11 +53,11 @@ public class ScoreManager : MonoBehaviour
     {
         if(Equals(tag, "player"))
         {// 当たったのがプレイヤー
-
             nScoreEnemy += nUpScore;      // 敵のスコアを加算
         }
         else if(Equals(tag, "enemy"))
         {// 当たったのが敵
+            Debug.Log("score");
 
             nScorePlayer += nUpScore;      // プレイヤーのスコアを加算
         }

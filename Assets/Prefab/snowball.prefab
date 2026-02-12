@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nCoolTime: 240
-  Score: {fileID: 0}
+  Score: {fileID: 6457808505268232739, guid: 1d7c84a0a17a01e46ac8e4963507fee6, type: 3}
   EM: {fileID: 1345515233722156585, guid: b174e776cb0e83644992b4c1d4025c87, type: 3}
 --- !u!54 &9071895076517574532
 Rigidbody:

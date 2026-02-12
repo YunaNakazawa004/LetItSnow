@@ -6,6 +6,7 @@ public class EffectManager : MonoBehaviour
 {
     public GameObject EffectPrefab;
     public GameObject EffectPrefab2;
+    public GameObject EffectPrefab3;
     private Dictionary<GameObject, GameObject> trails = new Dictionary<GameObject, GameObject>();
 
     // Start is called before the first frame update
@@ -18,10 +19,11 @@ public class EffectManager : MonoBehaviour
     void Update()
     {
         // シーン上の全ての玉を検索
-       var balls = GameObject.FindGameObjectsWithTag("Ball");
+        var balls = GameObject.FindGameObjectsWithTag("Ball");
 
         foreach (var ball in balls)
         {
+            Debug.Log("effected!");
             if (EffectPrefab != null)
             {
                 // エフェクト付与
@@ -35,14 +37,20 @@ public class EffectManager : MonoBehaviour
     {
         if (EffectPrefab2 != null)
         {
-            if (ball != null)
-            {
-                Vector3 spawnPos = ball.transform.position;
+            Vector3 spawnPos = ball.transform.position;
 
-                if (EffectPrefab2 != null)
-                {
-                    Instantiate(EffectPrefab2, spawnPos, Quaternion.identity);
-                }
+            if (EffectPrefab2 != null)
+            {
+                Instantiate(EffectPrefab2, spawnPos, Quaternion.identity);
+            }
+        }
+        if (EffectPrefab3 != null)
+        {
+            Vector3 spawnPos = ball.transform.position;
+
+            if (EffectPrefab3 != null)
+            {
+                Instantiate(EffectPrefab2, spawnPos, Quaternion.identity);
             }
         }
     }

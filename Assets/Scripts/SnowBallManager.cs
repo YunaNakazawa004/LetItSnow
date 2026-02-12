@@ -22,13 +22,14 @@ public class SnowBallManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && bEnemy == false)
         {// ƒvƒŒƒCƒ„[‚Ì’e‚ª“G‚É“–‚½‚Á‚½
-            EM.OnBallHit(gameObject);
             Destroy(gameObject);
 
             //this.PlayerManager = GameObject.Find("PlayerManager");
             //PlayerManager.GetComponent<PlayerManager>().AddScore(1);
 
             //GetComponent<ParticleSystem>().Play();
+            Debug.Log("hit");
+            EM.OnBallHit(gameObject);
             Score.UpScore("Enemy", 1);
         }
         else if (other.gameObject.CompareTag("Player") && bEnemy == true)

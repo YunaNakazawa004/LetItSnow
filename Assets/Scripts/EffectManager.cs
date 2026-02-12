@@ -5,6 +5,7 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     public GameObject EffectPrefab;
+    public GameObject EffectPrefab2;
     private Dictionary<GameObject, GameObject> trails = new Dictionary<GameObject, GameObject>();
 
     // Start is called before the first frame update
@@ -30,15 +31,19 @@ public class EffectManager : MonoBehaviour
 
         }
     }
-    public void RegisterBall(GameObject snowball)
+    public void OnBallHit(GameObject ball)
     {
-
-    }
-    private void OnBallHit(GameObject ball)
-    {
-        if (trails.TryGetValue(ball, out GameObject effect))
+        if (EffectPrefab2 != null)
         {
-            Destroy(effect);
+            if (ball != null)
+            {
+                Vector3 spawnPos = ball.transform.position;
+
+                if (EffectPrefab2 != null)
+                {
+                    Instantiate(EffectPrefab2, spawnPos, Quaternion.identity);
+                }
+            }
         }
     }
 

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9071895076517574532}
   m_Layer: 0
   m_Name: snowball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9077681582146273422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.308, y: 1.751, z: -0.6103115}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.53331023, y: 0.53331023, z: 0.53331023}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nCoolTime: 240
   Score: {fileID: 0}
+  EM: {fileID: 1345515233722156585, guid: b174e776cb0e83644992b4c1d4025c87, type: 3}
 --- !u!54 &9071895076517574532
 Rigidbody:
   m_ObjectHideFlags: 0

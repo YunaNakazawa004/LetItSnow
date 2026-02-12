@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
         playerScoreText.text = "PLAYER\n" + nScorePlayer.ToString();    // 整数を文字列に変換
         enemyScoreText.text = "ENEMY\n" + nScoreEnemy.ToString();       // 整数を文字列に変換
 
-#if true
+#if false
         // 入力テスト
         if(Input.GetMouseButtonDown(1))
         {// 左が押された
@@ -49,7 +49,7 @@ public class ScoreManager : MonoBehaviour
     //========================================
     // スコアの更新処理処理
     //========================================
-    void UpScore(string tag, int nUpScore)
+    public void UpScore(string tag, int nUpScore)
     {
         if(Equals(tag, "player"))
         {// 当たったのがプレイヤー

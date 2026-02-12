@@ -1661,7 +1661,7 @@ PrefabInstance:
     - target: {fileID: 2044482910195171727, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 167a824b67c0e7540b1ca8a87fb757fd, type: 2}
+      objectReference: {fileID: 9100000, guid: 7f9d0ccbb329a724b8af67f1f13cde47, type: 2}
     - target: {fileID: 5139666920524405419, guid: 68449bdc2fe089140a9fa41a51921e02, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3551,7 +3551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004316996972407210, guid: c121444d59fd8384d9fb2abd9be8f5ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 7004316996972407210, guid: c121444d59fd8384d9fb2abd9be8f5ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3593,6 +3593,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1190587270}
+    - target: {fileID: 7941242863188128458, guid: c121444d59fd8384d9fb2abd9be8f5ea, type: 3}
+      propertyPath: nCoolTime
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

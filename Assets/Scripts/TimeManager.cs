@@ -11,11 +11,18 @@ public class TimeManager : MonoBehaviour
     public Text timeText;    //時間表示用テキスト
     public float limit = 180.0f;    //制限時間
     public GameObject text;    //ゲームセット表示用テキスト
+    public GameObject WinUI;    // プレイヤー勝利時のUI
+    public GameObject DrowUI;    // プレイヤー勝利時のUI
+    public GameObject LoseUI;    // プレイヤー勝利時のUI
     private bool isGameSet = false;    //ゲームセット判定
 
     void Start()
     {
         timeText.text = "TIME\n" + limit + " s";
+
+        WinUI.SetActive(false);
+        DrowUI.SetActive(false);
+        LoseUI.SetActive(false);
     }
 
     void Update()
@@ -33,27 +40,35 @@ public class TimeManager : MonoBehaviour
             {// プレイヤーのスコアが高い場合
 
                 //ゲームセットを表示する
-                text.GetComponent<Text>().text = "GameSet!\n" + "YOU WIN!!\n" + "\nPrease Buttton";
+                WinUI.SetActive(true);
+
+                //text.GetComponent<Text>().text = "GameSet!\n" + "YOU WIN!!\n" + "\nPrease Buttton";
             }
-            else if(GetScoreScript.nScorePlayer == GetScoreScript.nScoreEnemy)
+            else if (GetScoreScript.nScorePlayer == GetScoreScript.nScoreEnemy)
             {
                 //ゲームセットを表示する
-                text.GetComponent<Text>().text = "GameSet!\n" + "DROW\n" + "\nPrease Buttton";
+                DrowUI.SetActive(true);
+
+                //text.GetComponent<Text>().text = "GameSet!\n" + "DROW\n" + "\nPrease Buttton";
             }
             else
             {
                 //ゲームセットを表示する
-                text.GetComponent<Text>().text = "GameSet!\n" + "YOU LOSE...\n" + "\nPrease Buttton";
+                LoseUI.SetActive(true);
+
+                //text.GetComponent<Text>().text = "GameSet!\n" + "YOU LOSE...\n" + "\nPrease Buttton";
             }
 
-            text.SetActive(true);
+            timeText.text = ("");
+            //text.SetActive(true);
             isGameSet = true;            //ゲームオーバー
             return;
         }
-
-        //時間をカウントダウンする
-        limit -= Time.deltaTime;
-        timeText.text = "TIME\n" + limit.ToString("f2") + " s";
+        else
+        {//時間をカウントダウンする
+            limit -= Time.deltaTime;
+            timeText.text = "TIME\n" + limit.ToString("f2") + " s";
+        }
     }
 
     //シーンを再読み込みする

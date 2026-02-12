@@ -11,6 +11,8 @@ public class SnowBallManager : MonoBehaviour
     {
         GetComponent<Rigidbody>().AddForce(dir);
         bEnemy = b;
+
+        //GetComponent<ParticleSystem>().Play();
     }
 
     private void OnTriggerEnter(Collider other)

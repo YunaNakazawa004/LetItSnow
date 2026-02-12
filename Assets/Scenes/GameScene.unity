@@ -4463,7 +4463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c31abf3e9c8d141a9e7ef52c470a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GetScoreScript: {fileID: 351917605}
   timeText: {fileID: 1765589568}
   limit: 180
   text: {fileID: 18690185}

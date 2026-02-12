@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
-    public ScoreManager GetScoreScript;
+    //public ScoreManager GetScoreScript;
 
     public Text timeText;    //時間表示用テキスト
     public float limit = 180.0f;    //制限時間
@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour
         //時間制限がきたとき
         if (limit < 0)
         {
-            if (GetScoreScript.nScorePlayer > GetScoreScript.nScoreEnemy)
+            if (ScoreManager.Instance.nScorePlayer > ScoreManager.Instance.nScoreEnemy)
             {// プレイヤーのスコアが高い場合
 
                 //ゲームセットを表示する
@@ -44,7 +44,7 @@ public class TimeManager : MonoBehaviour
 
                 //text.GetComponent<Text>().text = "GameSet!\n" + "YOU WIN!!\n" + "\nPrease Buttton";
             }
-            else if (GetScoreScript.nScorePlayer == GetScoreScript.nScoreEnemy)
+            else if (ScoreManager.Instance.nScorePlayer == ScoreManager.Instance.nScoreEnemy)
             {
                 //ゲームセットを表示する
                 DrawUI.SetActive(true);
